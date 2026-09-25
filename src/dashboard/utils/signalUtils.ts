@@ -18,17 +18,39 @@ export function formatSignalDate(timestampMs: number): string {
  * @returns title for the signal, composed using its values
  */
 export function getSignalTitle(signal:Signal):string {
-switch (signal.signalType) {
-    case 'ROLE_CHANGE':
-        return `${signal.username} changed role from ${signal.previousRole ?? ''} to ${signal.newRole ?? ''} at ${signal.company ?? ''}`;
+    switch (signal.signalType) {
+        case 'ROLE_CHANGE':
+            return `${signal.username} changed role from ${signal.previousRole ?? ''} to ${signal.newRole ?? ''} at ${signal.company ?? ''}`;
 
-    case 'WEBSITE_VIEW':
-        return `${signal.company || signal.username} viewed ${signal.nPages_Viewed ?? 0} pages of your website for ${signal.timePagesViewedS ?? 0} sec`;
+        case 'WEBSITE_VIEW':
+            return `${signal.company || signal.username} viewed ${signal.nPages_Viewed ?? 0} pages of your website for ${signal.timePagesViewedS ?? 0} sec`;
 
-    case 'COMPANY_CHANGE':
-        return `${signal.username} moved to ${signal.company ?? ''} as ${signal.newRole ?? ''}`;
+        case 'COMPANY_CHANGE':
+            return `${signal.username} moved to ${signal.company ?? ''} as ${signal.newRole ?? ''}`;
 
-    default:
-        return `${signal.username}: signal of unrecognised type`;
+        default:
+            return `${signal.username}: signal of unrecognised type`;
+    }
 }
-}
+
+/**
+ * Provides the style corresponding to the tag. signal type tags all have the same style except they vary in colors,
+ * and "In sequence" tags have toheir own different style
+ * @param tag text of the tag to be rendered. its possible values are: "Role change", "Permission change", "Account created", and "In sequence"
+ * @returns tailwind class name for the tag
+ */
+export function getTagStyle (tag: string):string {
+    console.log("tag = ", tag)
+    switch (tag) {
+      case 'Role change':
+        return 'text-purple-600 bg-purple-50';
+      case 'Permission change':
+        return 'text-emerald-600 bg-emerald-50';
+      case 'Account created':
+        return 'text-sky-600 bg-sky-50';
+      case 'In sequence':
+        return 'text-pink-500 bg-pink-50';
+      default:
+        return 'text-slate-600 bg-slate-100';
+    }
+  };

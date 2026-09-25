@@ -1,8 +1,12 @@
 import React from 'react';
 import signalsDummy from '../../../public/signals_dummy.json';
 import companyAvatar from '../../../public/companyAvatar.svg';
-import { getSignalTitle, formatSignalDate } from '../utils/signalUtils';
+import { getSignalTitle, formatSignalDate, getTagStyle } from '../utils/signalUtils';
+import { SIGNAL_TYPE_LABELS } from '../constants/dashboardConstants';
 
+/**
+ * Data interface to manipulate Dashboard Signals
+ */
 export interface Signal {  
   id: string;
   timestampMs: number;
@@ -44,15 +48,31 @@ export const SignalsList: React.FC = () => {
           >
             {/* left side: qvatar, title and tags */}
             <div className="flex items-center gap-3.5 min-w-0">
+              
+              {/* Avatar */}
               <img
                 src={companyAvatar}
                 alt="Company Avatar"
               />
               <div className="min-w-0">
+
                 {/* Title */}
                 <p className="text-sm font-semibold text-slate-800 truncate">
                   {getSignalTitle(signal)}
                 </p>
+
+                {/* Tags */}
+                <div className="flex items-center gap-2 mt-1 flex-wrap">
+                  {/* signal type tag */}
+                  <span className={`text-xs px-2 py-0.5 rounded-md font-medium ${getTagStyle(signal.signalType)}`}>
+                    {SIGNAL_TYPE_LABELS[signal.signalType]}
+                  </span>
+                  {/* "In sequence" tag */}
+                  <span className={`text-xs px-2 py-0.5 rounded-md font-medium ${getTagStyle("In sequence")}`}>
+                    In sequence
+                  </span>
+                </div>
+
               </div>
             </div>
 
