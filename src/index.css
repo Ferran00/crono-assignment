@@ -34,3 +34,15 @@
   border-radius: 1rem;
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
+
+.new-item-count-indicator {background-color: #fbbf24;
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  border-radius: 9999px;
+}
