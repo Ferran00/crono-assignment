@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F4F6F8;
+    color: #0f172a;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;    /* slate-900 */
+    line-height: 1.25;
+  }
+  
+  h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.5;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: #64748b;     /* slate-500 */
+    line-height: 1.5;
+  }
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
