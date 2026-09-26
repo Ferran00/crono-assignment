@@ -64,13 +64,16 @@ export const SignalsList: React.FC = () => {
                 {/* Tags */}
                 <div className="flex items-center gap-2 mt-1 flex-wrap">
                   {/* signal type tag */}
-                  <span className={`text-xs px-2 py-0.5 rounded-md font-medium ${getTagStyle(signal.signalType)}`}>
+                  <span className={`text-xs px-2 py-0.5 rounded-md font-medium ${getTagStyle(SIGNAL_TYPE_LABELS[signal.signalType])}`}>
                     {SIGNAL_TYPE_LABELS[signal.signalType]}
                   </span>
                   {/* "In sequence" tag */}
+                  {
+                    signal.inSequence &&
                   <span className={`text-xs px-2 py-0.5 rounded-md font-medium ${getTagStyle("In sequence")}`}>
                     In sequence
                   </span>
+                  }
                 </div>
 
               </div>

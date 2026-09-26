@@ -40,14 +40,13 @@ export function getSignalTitle(signal:Signal):string {
  * @returns tailwind class name for the tag
  */
 export function getTagStyle (tag: string):string {
-    console.log("tag = ", tag)
     switch (tag) {
       case 'Role change':
         return 'text-purple-600 bg-purple-50';
-      case 'Permission change':
-        return 'text-emerald-600 bg-emerald-50';
-      case 'Account created':
-        return 'text-sky-600 bg-sky-50';
+      case 'Company change':
+        return 'text-amber-600 bg-amber-50';
+      case 'Website view':
+        return 'text-blue-600 bg-blue-50';
       case 'In sequence':
         return 'text-pink-500 bg-pink-50';
       default:
