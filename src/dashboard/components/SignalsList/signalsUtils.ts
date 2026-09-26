@@ -1,4 +1,4 @@
-import type { Signal } from '../components/SignalsList';
+import type { Signal } from './SignalsList';
 
 /**
  * Formats a signal's date down to "Month day, year" (example: "Apr 2, 2025")

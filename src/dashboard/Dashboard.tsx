@@ -1,4 +1,4 @@
-import { SignalsList } from "./components/SignalsList"
+import { SignalsList } from "./components/SignalsList/SignalsList"
 
 function Dashboard() {
 

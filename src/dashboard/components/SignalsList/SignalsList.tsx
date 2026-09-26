@@ -1,8 +1,8 @@
 import React from 'react';
-import signalsDummy from '../../../public/signals_dummy.json';
-import companyAvatar from '../../../public/companyAvatar.svg';
-import { getSignalTitle, formatSignalDate, getTagStyle } from '../utils/signalUtils';
-import { SIGNAL_TYPE_LABELS } from '../constants/dashboardConstants';
+import signalsDummy from '../../../../public/signals_dummy.json';
+import companyAvatar from '../../../../public/icons/companyAvatar.svg';
+import { getSignalTitle, formatSignalDate, getTagStyle } from './signalsUtils';
+import { SIGNAL_TYPE_LABELS } from './signalsConstants';
 
 /**
  * Data interface to manipulate Dashboard Signals
