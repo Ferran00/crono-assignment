@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import signalsDummy from '../../../../public/signals_dummy.json';
 import companyAvatar from '../../../../public/icons/companyAvatar.svg';
 import { getSignalTitle, formatSignalDate, getTagStyle } from './signalsUtils';
@@ -21,7 +21,24 @@ export interface Signal {
 }
 
 export const SignalsList: React.FC = () => {
-  const signals: Signal[] = signalsDummy;
+  const [signals, setSignals] = useState<Signal[]>([]);
+  const [loading, setLoading] = useState(true);
+  /**
+   * Fetches dummy data from /signals_dummy.json asynchronously.
+   * if it finds the signals, it sets them to the signals state variable.
+   * if there's an error fetching the signals, it sets the state variable to an empty array.
+   * sets loading to false when done.
+   */
+  useEffect(() => {
+    fetch('/signals_dummy.json').then((response) => {
+      if (!response.ok)
+        throw new Error('Unable to load signals');
+      return response.json() as Promise<Signal[]>;
+    })
+    .then(setSignals)
+    .catch(() => setSignals([]))
+    .finally(() => setLoading(false));
+  }, []);
 
   return (
     <section className="dashboard-card">
@@ -41,6 +58,8 @@ export const SignalsList: React.FC = () => {
 
       {/* scrollable signals list */}
       <div className="max-h-[360px] overflow-y-auto divide-y divide-slate-100 pr-2 scrollbar-thin scrollbar-thumb-slate-200">
+        {loading && <p className="px-2 py-8 text-center text-sm text-slate-400">Loading signals...</p>}
+        {!loading && signals.length === 0 && <p className="px-2 py-8 text-center text-sm text-slate-400">You’re all caught up.</p>}
         {signals.map((signal) => (
           <div
             key={signal.id}
