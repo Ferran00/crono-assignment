@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import Dashboard from "./dashboard/Dashboard";
 
 function App() {
@@ -5,6 +6,9 @@ function App() {
   return (
     <>
       <Dashboard/>
+      
+      {/* Global Toast Container */}
+      <Toaster position="bottom-center" richColors />
     </>
   )
 }
