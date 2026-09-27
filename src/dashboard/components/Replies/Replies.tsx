@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export function Replies() {
-  const [replyNum, setReplyNum] = useState<number>(24);
+  const [replyNum] = useState<number>(24);
 
   return (
     <section className="dashboard-card">
