@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import signalsDummy from '../../../../public/signals_dummy.json';
+import { useRef } from 'react';
 import companyAvatar from '../../../../public/icons/companyAvatar.svg';
 import { getSignalTitle, formatSignalDate, getTagStyle } from './signalsUtils';
 import { SIGNAL_TYPE_LABELS } from './signalsConstants';
@@ -21,8 +21,14 @@ export interface Signal {
 }
 
 export const SignalsList: React.FC = () => {
+  // Array of Signals to display
   const [signals, setSignals] = useState<Signal[]>([]);
+  // Indicates which Signal, if any, has the dropdown menu open
+  const [openAction, setOpenAction] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  // Ref assigned to the open dropdown menu, if there is one
+  const actionRef = useRef<HTMLDivElement>(null);
+
   /**
    * Fetches dummy data from /signals_dummy.json asynchronously.
    * if it finds the signals, it sets them to the signals state variable.
@@ -39,6 +45,26 @@ export const SignalsList: React.FC = () => {
     .catch(() => setSignals([]))
     .finally(() => setLoading(false));
   }, []);
+
+  /**
+   * Handles closing the Action dropdown when the user clicks outside of it.
+   */
+  useEffect(() => {
+    const closeMenu = (event: MouseEvent) => {
+      if (actionRef.current && !actionRef.current.contains(event.target as Node)) setOpenAction(null);
+    };
+    document.addEventListener('mousedown', closeMenu);
+    return () => document.removeEventListener('mousedown', closeMenu);
+  }, []);
+
+  /**
+   * Removes the indicated signal from the signals array
+   * @param id the signal's id
+   */
+  const removeSignal = (id: string) => {
+    setSignals((current) => current.filter((signal) => signal.id !== id));
+    setOpenAction(null);
+  };
 
   return (
     <section className="dashboard-card">
@@ -89,9 +115,9 @@ export const SignalsList: React.FC = () => {
                   {/* "In sequence" tag */}
                   {
                     signal.inSequence &&
-                  <span className={`text-xs px-2 py-0.5 rounded-md font-medium ${getTagStyle("In sequence")}`}>
-                    In sequence
-                  </span>
+                    <span className={`text-xs px-2 py-0.5 rounded-md font-medium ${getTagStyle("In sequence")}`}>
+                      In sequence
+                    </span>
                   }
                 </div>
 
@@ -103,12 +129,29 @@ export const SignalsList: React.FC = () => {
               <span className="text-xs text-slate-400 font-medium">
                 {formatSignalDate(signal.timestampMs)}
               </span>
-              <button
-                type="button"
-                className="bg-[#00bba7] hover:bg-[#00a392] text-white font-medium text-sm px-5 py-1.5 rounded-full transition-colors"
-              >
-                Action
-              </button>
+
+              {/* Div inside which the dropdown will be placed when opened */}
+              <div className="relative" ref={openAction === signal.id ? actionRef : undefined}>
+                {/* Action button */}
+                <button type="button" aria-expanded={openAction === signal.id}
+                  onClick={() => setOpenAction(openAction === signal.id ? null : signal.id)}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#00bba7] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#00a392]"
+                >
+                  Action
+                </button>
+
+                {/* Dropdown menu */}
+                {openAction === signal.id &&
+                  <div className="absolute right-0 top-10 z-20 w-40 overflow-hidden rounded-lg border border-slate-100 bg-white py-1 text-left shadow-lg">
+                    <button type="button" onClick={() => removeSignal(signal.id)} className="block w-full px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">
+                      Complete
+                    </button>
+                    <button type="button" onClick={() => removeSignal(signal.id)} className="block w-full px-4 py-2 text-sm text-red-500 hover:bg-red-50">
+                      Delete
+                    </button>
+                  </div>
+                }
+              </div>
             </div>
           </div>
         ))}

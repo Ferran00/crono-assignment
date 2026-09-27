@@ -47,3 +47,5 @@
   padding-bottom: 0.125rem;
   border-radius: 9999px;
 }
+
+button { cursor: pointer; }
