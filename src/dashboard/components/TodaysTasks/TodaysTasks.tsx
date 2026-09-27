@@ -42,7 +42,7 @@ export function TodaysTasks() {
    * if there's an error fetching, it sets the state variable to an empty object.
    */
   useEffect(() => {
-    fetch('/dummy_data/tasks_dummy.json')
+    fetch(`${import.meta.env.BASE_URL}dummy_data/tasks_dummy.json`)
       .then((response) => {
         if (!response.ok) throw new Error('Unable to load tasks');
         return response.json() as Promise<Record<string, number>>;

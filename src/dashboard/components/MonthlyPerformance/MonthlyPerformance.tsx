@@ -72,7 +72,7 @@ export function MonthlyPerformance() {
    * if there's an error fetching, it sets the state variable to an empty object.
    */
   useEffect(() => {
-    fetch('/dummy_data/monthly_performance_values_dummy.json')
+    fetch(`${import.meta.env.BASE_URL}dummy_data/monthly_performance_values_dummy.json`)
       .then((response) => {
         if (!response.ok) throw new Error('Unable to load performance metrics');
         return response.json() as Promise<Record<string, PerformanceValues>>;
