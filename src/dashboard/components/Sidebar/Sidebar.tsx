@@ -17,7 +17,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className={`${collapsed ? 'w-30' : 'w-60'} hidden shrink-0 flex-col border-r border-slate-100 bg-white p-5 transition-all md:flex`}
+      className={`${collapsed ? 'w-25' : 'w-60'} hidden shrink-0 flex-col border-r border-slate-100 bg-white p-5 transition-all md:flex`}
     >
       <div
         className={`mb-10 flex items-center ${collapsed ? 'justify-center' : 'justify-between'}`}
@@ -30,18 +30,32 @@ export function Sidebar() {
           className={collapsed ? 'h-8 w-8' : 'h-8 w-auto'}
         />
         
-        {/* toggle collapse button */}
-          <button
+        {/* collapse button */}
+          {!collapsed && (
+            <button
+              type="button"
+              onClick={() => setCollapsed(true)}
+              className="text-xl text-slate-400"
+              aria-label="Collapse sidebar"
+            >
+              <img src={`/icons/${"back-arrow.svg"}`} alt="" className="h-5 w-5" />
+            </button>
+          )}
+      </div>
+
+      {/* expand button */}
+      {collapsed && (
+        <button
             type="button"
-            onClick={() => setCollapsed(prev => !prev)}
+            onClick={() => setCollapsed(false)}
             className="text-xl text-slate-400"
-            aria-label="Collapse sidebar"
+            aria-label="Expand sidebar"
           >
             <img src={`/icons/${"back-arrow.svg"}`} alt="" className="h-5 w-5"
-              style={{ transform: collapsed ? 'scaleX(-1)' : 'none' }}          /* Flip icon horizontally when collapsed */
+              style={{ transform: 'scaleX(-1)' }}          /* Flip icon horizontally */
             />
           </button>
-      </div>
+      )}
 
       {/* entries */}
       <nav className="space-y-2">
