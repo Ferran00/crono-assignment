@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { LOGGED_USER } from '../../constants/userConstants';
 
 const items = [
   ['dashboard.svg', 'Dashboard'],
@@ -70,10 +71,25 @@ export function Sidebar() {
             {!collapsed && label}
 
             {/* Unread bubble */}
-            {parseInt(unreadCount)>0 && (<span className="new-item-count-indicator"> {unreadCount} </span>)}
+            {!collapsed && parseInt(unreadCount) > 0 && (<span className="new-item-count-indicator"> {unreadCount} </span>)}
           </button>
         ))}
       </nav>
+
+      {!collapsed && (
+        <button
+          type="button"
+          className={`mt-auto flex items-center gap-3 rounded-xl p-2 text-left hover:bg-slate-50`}
+        >
+          <img src="/icons/crono-logo-small.svg" alt="" className="h-10 w-10 shrink-0" />
+            <span className="min-w-0">
+              <span className="block truncate text-sm font-semibold text-[#010E27]">
+                {LOGGED_USER.NAME} {LOGGED_USER.SURNAME}
+              </span>
+              <span className="block text-sm text-slate-400">{LOGGED_USER.ROLE}</span>
+            </span>
+        </button>
+      )}
     </aside>
   );
 }
