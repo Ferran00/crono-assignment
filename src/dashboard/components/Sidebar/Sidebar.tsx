@@ -20,7 +20,7 @@ export function Sidebar() {
       className={`${collapsed ? 'w-25' : 'w-60'} hidden shrink-0 flex-col border-r border-slate-100 bg-white p-5 transition-all md:flex`}
     >
       <div
-        className={`mb-10 flex items-center ${collapsed ? 'justify-center' : 'justify-between'}`}
+        className={`flex items-center ${collapsed ? 'justify-center mb-5' : 'justify-between mb-10'}`}
       >
 
         {/* company logo */}
@@ -48,7 +48,7 @@ export function Sidebar() {
         <button
             type="button"
             onClick={() => setCollapsed(false)}
-            className="text-xl text-slate-400"
+            className="flex w-full items-center justify-center text-xl text-slate-400 mb-3"
             aria-label="Expand sidebar"
           >
             <img src={`/icons/${"back-arrow.svg"}`} alt="" className="h-5 w-5"
