@@ -36,7 +36,7 @@ export const SignalsList: React.FC = () => {
    * sets loading to false when done.
    */
   useEffect(() => {
-    fetch('/signals_dummy.json').then((response) => {
+    fetch('/dummy_data/signals_dummy.json').then((response) => {
       if (!response.ok)
         throw new Error('Unable to load signals');
       return response.json() as Promise<Signal[]>;
