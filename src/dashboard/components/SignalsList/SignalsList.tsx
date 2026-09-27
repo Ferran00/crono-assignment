@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import companyAvatar from '../../../../public/icons/companyAvatar.svg';
 import { getSignalTitle, formatSignalDate, getTagStyle } from './signalsUtils';
 import { SIGNAL_TYPE_LABELS } from './signalsConstants';
+import { toast } from 'sonner';
 
 /**
  * Data interface to manipulate Dashboard Signals
@@ -61,9 +62,12 @@ export const SignalsList: React.FC = () => {
    * Removes the indicated signal from the signals array
    * @param id the signal's id
    */
-  const removeSignal = (id: string) => {
+  const removeSignal = (id: string, action:string) => {
     setSignals((current) => current.filter((signal) => signal.id !== id));
     setOpenAction(null);
+
+    // show success toast
+    toast.success(action == "complete" ? "Signal Completed" : "Signal Deleted")
   };
 
   return (
@@ -143,12 +147,12 @@ export const SignalsList: React.FC = () => {
                 {/* Dropdown menu */}
                 {openAction === signal.id &&
                   <div className="absolute right-0 top-10 z-20 w-55 overflow-hidden rounded-2xl border border-slate-100 bg-white py-1 text-left shadow-lg">
-                    <button type="button" onClick={() => removeSignal(signal.id)}
+                    <button type="button" onClick={() => removeSignal(signal.id, "complete")}
                       className="w-full group flex items-center justify-between px-4 py-2 text-sm text-slate-700 hover:bg-[#E9F8F8] hover:text-[#0A9B94]" >
                       Complete
                       <img src={`/icons/checkmark.svg`} className="" />
                     </button>
-                    <button type="button" onClick={() => removeSignal(signal.id)}
+                    <button type="button" onClick={() => removeSignal(signal.id, "delete")}
                       className="w-full group flex items-center justify-between px-4 py-2 text-sm text-red-500 hover:bg-red-50">
                       Delete
                       <img src={`/icons/remove.svg`} className="" />
