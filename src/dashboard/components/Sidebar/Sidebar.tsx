@@ -7,7 +7,7 @@ const items = [
   ['add.svg', 'Templates'],
   ['strategy.svg', 'Sequences'],
   ['tasks.svg', 'Tasks'],
-  ['inbox.svg', 'Inbox'],
+  ['inbox.svg', 'Inbox', '24'],
   ['sales.svg', 'Deals'],
   ['analytics.svg', 'Analytics']
 ];
@@ -59,7 +59,7 @@ export function Sidebar() {
 
       {/* entries */}
       <nav className="space-y-2">
-        {items.map(([icon, label]) => (
+        {items.map(([icon, label, unreadCount]) => (
           <button
             type="button"
             key={label}
@@ -68,6 +68,9 @@ export function Sidebar() {
           >
             <img src={`/icons/${icon}`} alt="" className="h-5 w-5" />
             {!collapsed && label}
+
+            {/* Unread bubble */}
+            {parseInt(unreadCount)>0 && (<span className="new-item-count-indicator"> {unreadCount} </span>)}
           </button>
         ))}
       </nav>
