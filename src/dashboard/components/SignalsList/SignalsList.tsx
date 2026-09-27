@@ -150,12 +150,12 @@ export const SignalsList: React.FC = () => {
                     <button type="button" onClick={() => removeSignal(signal.id, "complete")}
                       className="w-full group flex items-center justify-between px-4 py-2 text-sm text-slate-700 hover:bg-[#E9F8F8] hover:text-[#0A9B94]" >
                       Complete
-                      <img src={`/icons/checkmark.svg`} className="" />
+                      <img src={`${import.meta.env.BASE_URL}icons/checkmark.svg`} className="" />
                     </button>
                     <button type="button" onClick={() => removeSignal(signal.id, "delete")}
                       className="w-full group flex items-center justify-between px-4 py-2 text-sm text-red-500 hover:bg-red-50">
                       Delete
-                      <img src={`/icons/remove.svg`} className="" />
+                      <img src={`${import.meta.env.BASE_URL}icons/remove.svg`} className="" />
                     </button>
                   </div>
                 }

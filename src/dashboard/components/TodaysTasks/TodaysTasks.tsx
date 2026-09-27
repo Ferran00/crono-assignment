@@ -78,7 +78,7 @@ export function TodaysTasks() {
               {task.error && (
                 <span className="flex items-center gap-1 rounded-full bg-white px-2 py-1 text-xs font-medium text-[#ED4C5E]">
                   1 error
-                  <img src="/icons/warning.svg" alt="" className="h-4 w-4" />
+                  <img src={`${import.meta.env.BASE_URL}icons/warning.svg`} alt="" className="h-4 w-4" />
                 </span>
               )}
 

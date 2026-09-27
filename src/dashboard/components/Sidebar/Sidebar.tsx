@@ -26,7 +26,7 @@ export function Sidebar() {
 
         {/* company logo */}
         <img
-          src={collapsed ? '/icons/crono-logo-small.svg' : '/icons/crono-logo.svg'}
+          src={collapsed ? `${import.meta.env.BASE_URL}icons/crono-logo-small.svg` : `${import.meta.env.BASE_URL}icons/crono-logo.svg`}
           alt="Crono"
           className={collapsed ? 'h-8 w-8' : 'h-8 w-auto'}
         />
@@ -39,7 +39,7 @@ export function Sidebar() {
               className="text-xl text-slate-400"
               aria-label="Collapse sidebar"
             >
-              <img src={`/icons/${"back-arrow.svg"}`} alt="" className="h-5 w-5" />
+              <img src={`${import.meta.env.BASE_URL}icons/${"back-arrow.svg"}`} alt="" className="h-5 w-5" />
             </button>
           )}
       </div>
@@ -52,7 +52,7 @@ export function Sidebar() {
             className="flex w-full items-center justify-center text-xl text-slate-400 mb-3"
             aria-label="Expand sidebar"
           >
-            <img src={`/icons/${"back-arrow.svg"}`} alt="" className="h-5 w-5"
+            <img src={`${import.meta.env.BASE_URL}icons/${"back-arrow.svg"}`} alt="" className="h-5 w-5"
               style={{ transform: 'scaleX(-1)' }}          /* Flip icon horizontally */
             />
           </button>
@@ -67,7 +67,7 @@ export function Sidebar() {
             title={collapsed ? label : undefined}
             className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-slate-500 hover:bg-slate-50 ${collapsed ? 'justify-center' : ''}`}
           >
-            <img src={`/icons/${icon}`} alt="" className="h-5 w-5" />
+            <img src={`${import.meta.env.BASE_URL}icons/${icon}`} alt="" className="h-5 w-5" />
             {!collapsed && label}
 
             {/* Unread bubble */}
@@ -81,7 +81,7 @@ export function Sidebar() {
           type="button"
           className={`mt-auto flex items-center gap-3 rounded-xl p-2 text-left hover:bg-slate-50`}
         >
-          <img src="/icons/crono-logo-small.svg" alt="" className="h-10 w-10 shrink-0" />
+          <img src={`${import.meta.env.BASE_URL}icons/crono-logo-small.svg`} alt="" className="h-10 w-10 shrink-0" />
             <span className="min-w-0">
               <span className="block truncate text-sm font-semibold text-[#010E27]">
                 {LOGGED_USER.NAME} {LOGGED_USER.SURNAME}

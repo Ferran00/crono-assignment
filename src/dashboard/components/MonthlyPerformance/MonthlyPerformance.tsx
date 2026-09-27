@@ -87,7 +87,7 @@ export function MonthlyPerformance() {
         <h2 className="font-semibold text-[#010E27]">{currentMonth}'s performance</h2>
         <button type="button" className="flex items-center gap-2 text-sm font-medium text-[#0A9B94]">
           Edit KPIs
-          <img src="/icons/edit.svg" alt="" className="h-3 w-3" />
+          <img src={`${import.meta.env.BASE_URL}icons/edit.svg`} alt="" className="h-3 w-3" />
         </button>
       </div>
       
@@ -104,7 +104,7 @@ export function MonthlyPerformance() {
               <div className="mt-3 flex items-center gap-2">
 
                 {/* Icon */}
-                <img src={`/icons/${metric.icon}`} alt="" className="h-5 w-5" />
+                <img src={`${import.meta.env.BASE_URL}icons/${metric.icon}`} alt="" className="h-5 w-5" />
 
                 {/* value */}
                 <span className={`text-xl font-medium ${metric.color}`}>
