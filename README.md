@@ -1,5 +1,15 @@
 # Crono Assignment, by Ferran Iglesias
 
+## Details
+- As a demo of proper frontend development, I've extracted:
+    - User name, surname and position into global constants.
+    - Number of tasks in each stage, KPI's, signals, ... into json data dummies; and I've made their fetching asynchronous.
+- I've hardcoded company avatars (Amazon, ...)
+
 ## Next Steps
-This is obviously just a sample. In a real system, my next step would be to address the following TODO's:
+Here's a list of things I would address were this a real system:
 - i18n of hardcoded strings (headers, subtitles, etc)
+
+---
+
+[My LinkedIn](https://www.linkedin.com/in/ferran-iglesias-barenys-b6b4a52a9)
