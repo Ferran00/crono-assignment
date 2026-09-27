@@ -1,0 +1,94 @@
+[
+    {
+        "id": "1",
+        "timestampMs": 1743613567000,
+        "username": "Robert Smith",
+        "signalType": "ROLE_CHANGE",
+        "inSequence": true,
+        "previousRole": "SDR",
+        "newRole": "Senior SDR",
+        "company":"WeRoad"
+    },
+    {
+        "id": "2",
+        "timestampMs": 1743613567000,
+        "username": "Robert Smith",
+        "signalType": "COMPANY_CHANGE",
+        "inSequence": true,
+        "previousRole": "SDR",
+        "newRole": "Senior SDR",
+        "company":"WeRoad"
+    },
+    {
+        "id": "3",
+        "timestampMs": 1743613567000,
+        "username": "Robert Smith",
+        "signalType": "ROLE_CHANGE",
+        "inSequence": false,
+        "previousRole": "SDR",
+        "newRole": "Senior SDR",
+        "company":"WeRoad"
+    },
+    {
+        "id": "4",
+        "timestampMs": 1743613567000,
+        "username": "Robert Smith",
+        "signalType": "WEBSITE_VIEW",
+        "nPages_Viewed": 2,
+        "timePagesViewedS":65
+    },
+    {
+        "id": "5",
+        "timestampMs": 1743613567000,
+        "username": "Robert Smith",
+        "signalType": "WEBSITE_VIEW",
+        "nPages_Viewed": 2,
+        "timePagesViewedS": 65
+    },
+    {
+        "id": "6",
+        "timestampMs": 1743613567000,
+        "username": "Robert Smith",
+        "signalType": "ROLE_CHANGE",
+        "inSequence": true,
+        "previousRole": "SDR",
+        "newRole": "Senior SDR",
+        "company":"WeRoad"
+    },
+    {
+        "id": "7",
+        "timestampMs": 1743613567000,
+        "username": "Robert Smith",
+        "signalType": "COMPANY_CHANGE",
+        "inSequence": true,
+        "previousRole": "SDR",
+        "newRole": "Senior SDR",
+        "company":"WeRoad"
+    },
+    {
+        "id": "8",
+        "timestampMs": 1743613567000,
+        "username": "Robert Smith",
+        "signalType": "ROLE_CHANGE",
+        "inSequence": false,
+        "previousRole": "SDR",
+        "newRole": "Senior SDR",
+        "company":"WeRoad"
+    },
+    {
+        "id": "9",
+        "timestampMs": 1743613567000,
+        "username": "Robert Smith",
+        "signalType": "WEBSITE_VIEW",
+        "nPages_Viewed": 2,
+        "timePagesViewedS":65
+    },
+    {
+        "id": "10",
+        "timestampMs": 1743613567000,
+        "username": "Robert Smith",
+        "signalType": "WEBSITE_VIEW",
+        "nPages_Viewed": 2,
+        "timePagesViewedS": 65
+    }
+]
