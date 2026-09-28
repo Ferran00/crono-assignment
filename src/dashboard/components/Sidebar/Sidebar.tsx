@@ -76,6 +76,7 @@ export function Sidebar() {
         ))}
       </nav>
 
+      {/* Logged user info summary */}
       {!collapsed && (
         <button
           type="button"

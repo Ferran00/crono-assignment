@@ -72,3 +72,10 @@ src={`${import.meta.env.BASE_URL}icons/onboarding/extension.svg`}
 - extract the whole onboardingItems array into a public/dummy_data/onboarding_items.json
 - obtain it asynchronously with a useEffect hook the same way that SignalsList obtanins signals_dummy.json
 - rename the "icon" field to "iconUrl"
+
+### T8: Sidebar: fixed height
+- the sidebar should always be exactly as tall as the viewport, even if the contents of the app stretch past it.
+- when the user scrolls the app, the sidebar must stay fixed
+- the purpose is 
+	- the Logged user info summary at the bottom must be plainly visible as long as the sidebar is expanded
+	- the sidebar must look static
