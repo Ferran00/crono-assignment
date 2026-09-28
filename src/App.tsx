@@ -8,7 +8,12 @@ function App() {
       <Dashboard/>
       
       {/* Global Toast Container */}
-      <Toaster position="bottom-center" richColors />
+      <Toaster position="bottom-center" richColors
+        toastOptions={{
+            classNames: {
+              title: 'text-sm font-bold text-slate-800',
+            },
+          }}/>
     </>
   )
 }
