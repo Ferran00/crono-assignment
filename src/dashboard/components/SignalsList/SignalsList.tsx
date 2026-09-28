@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
-import companyAvatar from '../../../../public/icons/companyAvatar.svg';
 import { getSignalTitle, formatSignalDate, getTagStyle } from './signalsUtils';
 import { SIGNAL_TYPE_LABELS } from './signalsConstants';
 import { toast } from 'sonner';
@@ -95,14 +94,21 @@ export const SignalsList: React.FC = () => {
             key={signal.id}
             className="py-3 flex items-center justify-between gap-4 hover:bg-slate-50/50 px-2 rounded-xl transition-colors"
           >
-            {/* left side: qvatar, title and tags */}
+            {/* left side: avatar, title and tags */}
             <div className="flex items-center gap-3.5 min-w-0">
               
-              {/* Avatar */}
-              <img
-                src={companyAvatar}
-                alt="Company Avatar"
-              />
+              {/* Avatar and notification bubble */}
+              <div className="relative inline-block">
+                {/* Avatar */}
+                <img
+                  src={`${import.meta.env.BASE_URL}icons/amazon-avatar.svg`}
+                  alt="Company Avatar"
+                  className='rounded-full border-2 border-white'
+                />
+                {/* notification bubble */}
+                <span className="absolute top-0 left-0 h-2 w-2 rounded-full bg-yellow-400 ring-2 ring-white" />
+              </div>
+
               <div className="min-w-0">
 
                 {/* Title */}
