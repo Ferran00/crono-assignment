@@ -61,7 +61,7 @@ export function TodaysTasks() {
 
   return (
     <section className="dashboard-card">
-      <h2 className="font-semibold text-slate-900">Today's tasks</h2>
+      <h2 className="font-semibold text-slate-900 mb-2">Today's tasks</h2>
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {tasks.map((task) => (
           <button
