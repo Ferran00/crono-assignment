@@ -152,14 +152,14 @@ export const SignalsList: React.FC = () => {
 
                 {/* Dropdown menu */}
                 {openAction === signal.id &&
-                  <div className="absolute right-0 top-10 z-20 w-55 overflow-hidden rounded-2xl border border-slate-100 bg-white py-1 text-left shadow-lg">
+                  <div className="absolute right-0 top-10 z-20 w-55 overflow-hidden rounded-2xl border border-slate-100 bg-white p-1 text-left shadow-lg">
                     <button type="button" onClick={() => removeSignal(signal.id, "complete")}
-                      className="w-full group flex items-center justify-between px-4 py-2 text-sm text-slate-700 hover:bg-[#E9F8F8] hover:text-[#0A9B94]" >
+                      className="w-full group flex mb-0.5 items-center justify-between rounded-xl px-4 py-2 text-sm text-slate-700 hover:bg-[#E9F8F8] hover:text-[#0A9B94]" >
                       Complete
                       <img src={`${import.meta.env.BASE_URL}icons/checkmark.svg`} className="" />
                     </button>
                     <button type="button" onClick={() => removeSignal(signal.id, "delete")}
-                      className="w-full group flex items-center justify-between px-4 py-2 text-sm text-red-500 hover:bg-red-50">
+                      className="w-full group flex mt-0.5 items-center justify-between rounded-xl px-4 py-2 text-sm text-red-500 hover:bg-red-50">
                       Delete
                       <img src={`${import.meta.env.BASE_URL}icons/remove.svg`} className="" />
                     </button>
