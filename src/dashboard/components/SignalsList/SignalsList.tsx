@@ -137,7 +137,7 @@ export const SignalsList: React.FC = () => {
                 <img
                   src={`${import.meta.env.BASE_URL}icons/company-avatars/amazon-avatar.svg`}
                   alt="Company Avatar"
-                  className='rounded-full border-2 border-white'
+                  className='rounded-full ring-2 ring-white h-8 w-8 min-h-8 min-w-8'
                 />
                 {/* notification bubble */}
                 <span className="absolute top-0 left-0 h-2 w-2 rounded-full bg-yellow-400 ring-2 ring-white" />
