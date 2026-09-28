@@ -71,7 +71,7 @@ export function Sidebar() {
             {!collapsed && label}
 
             {/* Unread bubble */}
-            {!collapsed && parseInt(unreadCount) > 0 && (<span className="new-item-count-indicator"> {unreadCount} </span>)}
+            {!collapsed && parseInt(unreadCount) > 0 && (<span className="new-item-count-indicator ml-auto"> {unreadCount} </span>)}
           </button>
         ))}
       </nav>
