@@ -32,7 +32,7 @@
     {
         "id": "4",
         "timestampMs": 1743613567000,
-        "username": "Robert Smith",
+        "username": "Amazon",
         "signalType": "WEBSITE_VIEW",
         "nPages_Viewed": 2,
         "timePagesViewedS":65
@@ -40,7 +40,7 @@
     {
         "id": "5",
         "timestampMs": 1743613567000,
-        "username": "Robert Smith",
+        "username": "Amazon",
         "signalType": "WEBSITE_VIEW",
         "nPages_Viewed": 2,
         "timePagesViewedS": 65
