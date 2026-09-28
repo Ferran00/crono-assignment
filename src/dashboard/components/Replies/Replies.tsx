@@ -58,7 +58,7 @@ export function Replies() {
           {/* Company avatars */}
           <div className="inline-flex items-center max-w-full overflow-hidden">
             {replies.slice(0, 4).map((reply)=>
-              <img key={reply.id} src={`${import.meta.env.BASE_URL}icons/${reply.avatarUrl}` }
+              <img key={reply.id} src={`${import.meta.env.BASE_URL}icons/company-avatars/${reply.avatarUrl}` }
                 className='rounded-full border-2 border-white first:ml-0 -ml-2 h-10 w-10 shrink-0 min-h-10 min-w-10 object-cover'></img>
             )}
           </div>

@@ -101,7 +101,7 @@ export const SignalsList: React.FC = () => {
               <div className="relative inline-block">
                 {/* Avatar */}
                 <img
-                  src={`${import.meta.env.BASE_URL}icons/amazon-avatar.svg`}
+                  src={`${import.meta.env.BASE_URL}icons/company-avatars/amazon-avatar.svg`}
                   alt="Company Avatar"
                   className='rounded-full border-2 border-white'
                 />

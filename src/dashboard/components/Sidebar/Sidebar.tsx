@@ -26,7 +26,7 @@ export function Sidebar() {
 
         {/* company logo */}
         <img
-          src={collapsed ? `${import.meta.env.BASE_URL}icons/crono-logo-small.svg` : `${import.meta.env.BASE_URL}icons/crono-logo.svg`}
+          src={collapsed ? `${import.meta.env.BASE_URL}icons/crono-icons/crono-logo-small.svg` : `${import.meta.env.BASE_URL}icons/crono-icons/crono-logo.svg`}
           alt="Crono"
           className={collapsed ? 'h-8 w-8' : 'h-8 w-auto'}
         />
@@ -81,7 +81,7 @@ export function Sidebar() {
           type="button"
           className={`mt-auto flex items-center gap-3 rounded-xl p-2 text-left hover:bg-slate-50`}
         >
-          <img src={`${import.meta.env.BASE_URL}icons/crono-logo-small.svg`} alt="" className="h-10 w-10 shrink-0" />
+          <img src={`${import.meta.env.BASE_URL}icons/crono-icons/crono-logo-small.svg`} alt="" className="h-10 w-10 shrink-0" />
             <span className="min-w-0">
               <span className="block truncate text-sm font-semibold text-[#010E27]">
                 {LOGGED_USER.NAME} {LOGGED_USER.SURNAME}
