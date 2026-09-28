@@ -1,6 +1,7 @@
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { Replies } from './components/Replies/Replies';
 import { MonthlyPerformance } from './components/MonthlyPerformance/MonthlyPerformance';
+import { Onboarding } from './components/Onboarding/Onboarding';
 import { SignalsList } from './components/SignalsList/SignalsList';
 import { TodaysTasks } from './components/TodaysTasks/TodaysTasks';
 import { Welcome } from './components/Welcome/Welcome';
@@ -22,10 +23,12 @@ function Dashboard() {
           <div className="col-span-12 lg:col-span-8">
             <TodaysTasks />
           </div>
-          <div className="col-span-12 lg:col-span-8">
-            <SignalsList />
-          </div>
-          <div className="col-span-12 lg:col-span-4" />
+            <div className="col-span-12 lg:col-span-8">
+              <SignalsList />
+            </div>
+            <div className="col-span-12 lg:col-span-4">
+              <Onboarding />
+            </div>
         </div>
       </main>
     </div>

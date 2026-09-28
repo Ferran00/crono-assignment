@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Integrations Setup",
+    "duration": "5 min",
+    "iconUrl": "extension.svg"
+  },
+  {
+    "title": "Add new Contact",
+    "duration": "5 min",
+    "iconUrl": "add-contacts.svg"
+  },
+  {
+    "title": "Create your first sequence",
+    "duration": "10 min",
+    "iconUrl": "target.svg"
+  },
+  {
+    "title": "Add contacts to sequence",
+    "duration": "5 min",
+    "iconUrl": "add-to-strategy.svg"
+  },
+  {
+    "title": "Run your first task",
+    "duration": "10 min",
+    "iconUrl": "run-task.svg"
+  }
+]

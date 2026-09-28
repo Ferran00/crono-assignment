@@ -21,7 +21,7 @@
 - Every section must be each inside their own subfolder in the components dir.
 - Use plain ASCII apostrophes (') instead of typographic curly apostrophes (’) in all source code and UI text to avoid character-encoding issues.
 
-###
+### Style principles
 - use h2 for section titles, except for that of WelcomeComponent
 
 ## Tasks
@@ -67,3 +67,8 @@ src={`${import.meta.env.BASE_URL}icons/onboarding/extension.svg`}
 
 ### T6: fix SignalsList's dropdown menu
 - Currently, if the user clicks action on the last element of the list, the dropdown menu renders inside of the scrollable element. It must not be confined in this element. It must render over top of everything else, over top of the screen.
+
+### T7: Onboarding component, part 2
+- extract the whole onboardingItems array into a public/dummy_data/onboarding_items.json
+- obtain it asynchronously with a useEffect hook the same way that SignalsList obtanins signals_dummy.json
+- rename the "icon" field to "iconUrl"
