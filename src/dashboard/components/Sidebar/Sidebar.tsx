@@ -18,7 +18,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className={`${collapsed ? 'w-25' : 'w-60'} hidden shrink-0 flex-col border-r border-slate-100 bg-white p-5 transition-all md:flex`}
+      className={`${collapsed ? 'w-25' : 'w-60'} sticky top-0 h-screen hidden shrink-0 self-start flex-col border-r border-slate-100 bg-white p-5 transition-all md:flex`}
     >
       <div
         className={`flex items-center ${collapsed ? 'justify-center mb-5' : 'justify-between mb-10'}`}
