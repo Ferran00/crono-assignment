@@ -59,7 +59,7 @@ do:
 
 ### T5: Onboarding component
 - each of the 5 sections is a button
-- each section's title is a <h2>
+- each section's title is a ```<h2>```
 - use the icons in public/icons/onboarding. reference them using ```import.meta.env.BASE_URL```, like so:
 ```
 src={`${import.meta.env.BASE_URL}icons/onboarding/extension.svg`}

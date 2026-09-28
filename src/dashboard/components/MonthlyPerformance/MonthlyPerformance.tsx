@@ -93,14 +93,18 @@ export function MonthlyPerformance() {
       
       {/* Draw, in a grid, each of the metrics, with its values */}
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        {metrics.map((metric) => {
+        {metrics.map((metric, index) => {
 
           const metricPerformanceValues = performanceValues[metric.key] ?? { value: 0, target: 0 };
           const percentage:number = (metricPerformanceValues.value/metricPerformanceValues.target)*100;
 
           return (
             <div key={metric.label} className="rounded-xl border border-[#E6E9F2] px-3 py-2.5">
-              <p className="truncate text-sm font-medium text-[#43506A]">{metric.label}</p>
+              <div className='flex justify-between items-center'>
+                <span className="truncate text-sm font-medium text-[#43506A]">{metric.label}</span>
+                {index == 0 && (<button><img src={`${import.meta.env.BASE_URL}icons/info.svg`} alt="" className="h-5 w-5 min-h-5 min-w-5" /></button>)}
+              </div>
+              
               <div className="mt-3 flex items-center gap-2">
 
                 {/* Icon */}
