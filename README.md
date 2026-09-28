@@ -12,4 +12,5 @@
 ## Next Steps
 Here's a list of things I would address were this a real system:
 - i18n of hardcoded strings (headers, subtitles, etc)
+- Remove all hardcoded colors and establish them in index.css
 
