@@ -1,5 +1,8 @@
 # Crono Assignment, by Ferran Iglesias
 
+- **[Link to the deployed page](https://ferran00.github.io/crono-assignment/)**
+- [My LinkedIn](https://www.linkedin.com/in/ferran-iglesias-barenys-b6b4a52a9)
+
 ## Details
 - As a demo of proper frontend development, I've extracted:
     - User name, surname and position into global constants.
@@ -10,6 +13,3 @@
 Here's a list of things I would address were this a real system:
 - i18n of hardcoded strings (headers, subtitles, etc)
 
----
-
-[My LinkedIn](https://www.linkedin.com/in/ferran-iglesias-barenys-b6b4a52a9)
